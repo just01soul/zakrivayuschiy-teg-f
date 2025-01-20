@@ -1,1 +1,19 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-family: 'Inter';
+  --second-family: 'PressStart2P';
+  --wgth-font-family: 400;
+  --text-size: 18px;
+  --text-line-height: 1.16667;
+  --back-color: #fff;
+  --text-main-color: #000;
+  --text-button-color: #fff;
+  --border-color: #000;
+  --shadow-color: #fff;
+  --button-back-color: #fff;
+  --button-color: #000;
+  --text-line-height: 0.9;
+  --floppy-color: #fff;
+  --heart-contour-color: #000;
+  --heart-color: #fff;
+}
