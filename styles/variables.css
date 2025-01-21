@@ -17,3 +17,78 @@
   --heart-contour-color: #000;
   --heart-color: #fff;
 }
+
+.header__title {
+  --text-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__text {
+  --text-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.card__title {
+  --wgth-font-family: 700;
+}
+
+.image__span {
+  --text-size: 14px;
+}
+
+.like-icon {
+  --border-color: #fff;
+}
+
+.card__icon-button:focus-visible .like-icon {
+  --border-color: #000;
+}
+
+.button__text {
+  --text-size: 14px;
+}
+
+.button:hover .floppy {
+  --floppy-color: #fff;
+}
+
+.dialog__floppy {
+  --floppy-color:#000;
+}
+
+.dialog__text {
+  --text-size: 14px;
+  --text-line-height: 1.5;
+}
+
+.like-icon:hover .main-body {
+  --heart-color: var(--heart-contour-color);
+}
+
+.like-icon:hover .core {
+  --heart-color: var(--heart-contour-color);
+}
+
+.like-icon:active .main-body {
+  --heart-color: red;
+}
+
+.like-icon:active .core {
+  --heart-color: red;
+}
+
+.like-icon.is-liked .contour {
+  --heart-contour-color: red;
+}
+
+.like-icon.is-liked .main-body {
+  --heart-color: red;
+}
+
+.like-icon.is-liked .core {
+  --heart-color: red;
+}
+
+@media(width <= 375px) {
+  .header__title {
+    --text-size: 3.0625rem;
+  }
+}
