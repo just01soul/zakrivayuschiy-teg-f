@@ -22,7 +22,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-size: var(--text-size);
+  font-size: var(--main-text-size);
   color: var(--text-main-color);
   padding-block-start: 100px;
   justify-content: center;
@@ -45,12 +45,12 @@
 }
 
 .header__title {
-  font-size: var(--text-size);
+  font-size: var(--header-title-size);
   font-weight: inherit;
 }
 
 .header__text {
-  font-size: var(--text-size);
+  font-size: var(--header-text-size);
 }
 
 .main-content {
@@ -68,7 +68,7 @@
 .card__title {
   padding-block: 5px;
   font-size: var(--text-size);
-  font-variation-settings: "wght" var(--wgth-font-family);
+  font-variation-settings: "wght" var(--title-wgth-font-family);
   padding-inline: 10px;
   border-bottom: 2px solid var(--border-color);
 }
@@ -83,10 +83,10 @@
   right: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
   z-index: 1;
   font-family: var(--second-family), Arial, sans-serif;
-  font-size: var(--text-size);
+  font-size: var(--span-text-size);
   font-weight: inherit;
   text-transform: uppercase;
-  color: #000;
+  color: var(--text-main-color);
   mix-blend-mode: hard-light;
   opacity: 0.5;
   text-shadow:
@@ -99,7 +99,7 @@
 @supports((text-stroke: 1px var(--shadow-color)) or (-webkit-text-stroke: 1px var(--shadow-color))) {
   .image__span {
     -webkit-text-stroke: 1px var(--shadow-color);
-    text-stroke: 1px #000000;
+    text-stroke: 1px var(--shadow-color);
     text-shadow: none;
   }
 }
@@ -129,7 +129,7 @@
 }
 
 .filter-inspiration {
-  filter: hue-rotate(-25deg) contrast(150%);
+  filter: hue-rotate(15deg) contrast(150%);
 }
 
 .filter-wait {
@@ -137,7 +137,7 @@
 }
 
 .filter-happy-tiredness {
-  filter: contrast(190%) hue-rotate(10deg);
+  filter: contrast(190%) hue-rotate(-25deg);
 }
 
 .filter-second-wind {
@@ -171,17 +171,19 @@
 }
 
 .like-icon {
-  --border-color: #fff;
-
   padding-top: 3px;
   cursor: pointer;
-  outline: 2px solid var(--border-color);
+  outline: transparent;
   outline-offset: -1px;
   transition: outline 0.3s ease;
 }
 
 .card__icon-button:focus {
   outline: none;
+}
+
+.card__icon-button:focus-visible .like-icon {
+  outline: 2px solid var(--border-color);
 }
 
 .card__like-button {
@@ -207,30 +209,35 @@
   transition: box-shadow 0.3s ease;
 }
 
-.card__like-button::after {
+button::after {
   position: absolute;
   content: '';
-  min-width: 130px;
-  min-height: 38px;
   background-color: var(--button-color);
   transform: scaleX(0);
   transition: transform 0.5s ease-in-out;
   transform-origin: left center;
+  
+}
+
+.card__like-button::after {
+  min-width: 130px;
+  min-height: 38px;
   bottom: 25px;
   right: 25px;
 }
 
 .open-dialog-button::after {
-  position: absolute;
-  content: '';
   width: 100%;
   height: 100%;
-  background-color: var(--button-color);
-  transform: scaleX(0);
-  transition: transform 0.5s ease-in-out;
-  transform-origin: left center;
   left: 0;
   top: 0;
+}
+
+.close-button::after {
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
 }
 
 .button:hover::after {
@@ -243,7 +250,7 @@
 .button__text {
   position: relative;
   font-family: var(--second-family), Arial, sans-serif;
-  font-size: var(--text-size);
+  font-size: var(--span-text-size);
   line-height: var(--text-line-height);
   color: var(--text-button-color);
   z-index: 1;
@@ -278,7 +285,7 @@
 .dialog__floppy {
   width: 39px;
   height: 39px;
-  fill: var(--floppy-color);
+  fill: var(--dialog-floppy-color);
 }
 
 .dialog {
@@ -287,30 +294,17 @@
   padding-block: 28.5px;
   gap: 30px;
   background-color: var(--button-back-color);
+  align-items: center;
 }
 
 .dialog[open] {
   display: grid;
-  align-items: center;
 }
 
 .close-button {
   width: clamp(16.0625rem, 15.2702rem + 3.3803vw, 18.3125rem);
   position: relative;
   padding-block: 7px;
-}
-
-.close-button::after {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 100%;
-  background-color: var(--button-color);
-  transform: scaleX(0);
-  transition: transform 0.5s ease-in-out;
-  transform-origin: left center;
-  bottom: 0;
-  right: 0;
 }
 
 .dialog::backdrop {
@@ -331,8 +325,8 @@
 .dialog__text {
   position: relative;
   font-family: var(--second-family), Arial, sans-serif;
-  font-size: var(--text-size);
-  line-height: var(--text-line-height);
+  font-size: var(--span-text-size);
+  line-height: var(--dialog-text-line-height);
   color: var(--text-button-color);
   z-index: 1;
   mix-blend-mode: difference;

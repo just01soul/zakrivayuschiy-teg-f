@@ -3,8 +3,13 @@
   --font-family: 'Inter';
   --second-family: 'PressStart2P';
   --wgth-font-family: 400;
-  --text-size: 18px;
+  --title-wgth-font-family: 700;
+  --main-text-size: 18px;
+  --span-text-size: 14px;
+  --header-title-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --header-text-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   --text-line-height: 1.16667;
+  --dialog-text-line-height: 1.5;
   --back-color: #fff;
   --text-main-color: #000;
   --text-button-color: #fff;
@@ -14,81 +19,16 @@
   --button-color: #000;
   --text-line-height: 0.9;
   --floppy-color: #fff;
+  --dialog-floppy-color:#000;
   --heart-contour-color: #000;
   --heart-color: #fff;
-}
-
-.header__title {
-  --text-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-}
-
-.header__text {
-  --text-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-}
-
-.card__title {
-  --wgth-font-family: 700;
-}
-
-.image__span {
-  --text-size: 14px;
-}
-
-.like-icon {
-  --border-color: #fff;
-}
-
-.card__icon-button:focus-visible .like-icon {
-  --border-color: #000;
-}
-
-.button__text {
-  --text-size: 14px;
-}
-
-.button:hover .floppy {
-  --floppy-color: #fff;
-}
-
-.dialog__floppy {
-  --floppy-color:#000;
-}
-
-.dialog__text {
-  --text-size: 14px;
-  --text-line-height: 1.5;
-}
-
-.like-icon:hover .main-body {
-  --heart-color: var(--heart-contour-color);
-}
-
-.like-icon:hover .core {
-  --heart-color: var(--heart-contour-color);
-}
-
-.like-icon:active .main-body {
-  --heart-color: red;
-}
-
-.like-icon:active .core {
-  --heart-color: red;
-}
-
-.like-icon.is-liked .contour {
-  --heart-contour-color: red;
-}
-
-.like-icon.is-liked .main-body {
-  --heart-color: red;
-}
-
-.like-icon.is-liked .core {
-  --heart-color: red;
+  --heart-active-color: red;
+  --heart-liked-color: red;
+  --heart-spark-color: none;
 }
 
 @media(width <= 375px) {
-  .header__title {
-    --text-size: 3.0625rem;
+  :root {
+    --header-title-size: 3.0625rem;
   }
 }
