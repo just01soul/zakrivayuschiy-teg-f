@@ -67,27 +67,27 @@
 
 .like-icon.is-liked .contour {
   fill: var(--heart-liked-color);
-  transition: fill 0.3s 1 alernate linear 0.06s ;
+  transition: fill 0.3s 1 alternate linear 0.06s ;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-liked-color);
-  transition: fill 0.3s 1 alernate linear 0.05s;
+  transition: fill 0.3s 1 alternate linear 0.05s;
 }
 
 .like-icon.is-liked .core {
   fill: var(--heart-liked-color);
-  transition: fill 0.3s 1 alernate linear;
+  transition: fill 0.3s 1 alternate linear;
 }
 
 .like-icon.is-liked .sparks {
-  animation-direction: alernate;
+  animation-direction: alternate;
   animation: sparkAppears 0.3s 1 ease-in 0.3s;
 }
 
 .like-icon.is-liked .heart {
   fill: var(--heart-liked-color);
-  animation-direction: alernate;
+  animation-direction: alternate;
   animation: scale-heart 0.3s 1 ease-in 0.1s;
   transform-origin: center center;
 }
